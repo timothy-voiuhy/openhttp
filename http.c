@@ -33,6 +33,26 @@ int MatchHttps(char *url){
     return in_String(url,HTTPS_REGEX);
 }
 
+char *innerMatchReturnPath(char *nw_url,int params){
+    regex_t compiled_expresssion;
+    regmatch_t match[1];
+    char *pattern;
+    if (params == 0){
+        char *pattern = PATH_PATTERN_WITH_PARAMS;
+    }else{
+        pattern = PATH_PATTERN_WITHOUT_PARAMS;
+    }
+    if(regcomp(&compiled_expresssion, pattern, 0)!=0){
+        fprintf(stderr, "compilation failed");
+    }else{
+        if(regexec(&compiled_expresssion, nw_url,1, match, 0)== 0){
+            char *matchedpath[100];
+            snprintf(matchedpath,sizeof(matchedpath)*100,"%.*s",match[0].rm_eo-match[0].rm_so,nw_url+match[0].rm_eo );
+            return matchedpath;
+        }
+    }
+}
+
 char *MatchReturnNetloc(char *url){
     if(IsValidUrl(url) != 0){
         perror("provided URL is invalid");
@@ -58,29 +78,40 @@ char *MatchReturnNetloc(char *url){
 URL DecompileUrl(char *url){
     URL decompiled_url;
     int parameters_present;
+    char *nw_url;
+    char *path;
     if (IsValidUrl(url) != EXIT_SUCCESS){
         fprintf(stderr, "Cannot decompile url. Provided string Is not valid url");
     }
     // set scheme
     if (MatchHttps(url) != EXIT_SUCCESS){
         decompiled_url.scheme = SCHEME_HTTPS;
+        nw_url = string_ReplaceSubString(url, SCHEME_HTTPS, "");
     }else{
         decompiled_url.scheme = SCHEME_HTTP;
-        }
+        nw_url = string_ReplaceSubString(url, SCHEME_HTTP, "");
+        }   
     // set netloc    
-    char *netloc = MatchReturnNetloc(url);
+    char *netloc = MatchReturnNetloc(nw_url);
     if(netloc != (char *)1){
         decompiled_url.netloc = netloc;
+    // strip off the netloc
+    string_ReplaceSubString(nw_url, netloc, "");   
     // check parameteres
     }if(in_String(url, "\?")==0){
         parameters_present = 0;
-    }
+    }else{parameters_present = 1;}
     // set path
     if(parameters_present == 0){
-
+        path = innerMatchReturnPath(nw_url,0);
+        decompiled_url.path = path;
     }
-    else if(parameters_present ==1){
-
+    else{
+        path  = innerMatchReturnPath(nw_url, 1);
+        decompiled_url.path = path;
+    }
+    if (parameters_present ==1){
+        
     }
     
 } 

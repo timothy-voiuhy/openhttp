@@ -9,6 +9,8 @@
 #define SCHEME_HTTP "http"
 #define SCHEME_HTTPS "https"
 
+#define PATH_PATTERN_WITH_PARAMS "\\/.*\?"
+#define PATH_PATTERN_WITHOUT_PARAMS "\\/.*"
 #define NETLOC_PATTERN "\\/\\/.*\\/"
 #define HTTPS_REGEX "https\\:\\/\\/.*\\/.*"
 #define HTTP_REGEX "http\\:\\/\\/.*\\/.*"
