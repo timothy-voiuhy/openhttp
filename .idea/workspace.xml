@@ -16,29 +16,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb67d295-1f0f-4c1b-a69e-34078a9f944d" name="Changes" comment="initial_commit">
-      <change afterPath="$PROJECT_DIR$/core.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datatypes.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datatypes.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dict.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dict.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dns_resolve.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dns_resolve.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/http.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/http.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/httpthreads.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/httpthreads.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logging.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logging.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/request.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/response.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/set.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/set.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_file" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_file.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +127,7 @@
       <option name="presentableId" value="Default" />
       <updated>1706827870437</updated>
       <workItem from="1706827875545" duration="1921000" />
-      <workItem from="1706830105674" duration="1161000" />
+      <workItem from="1706830105674" duration="2036000" />
     </task>
     <task id="LOCAL-00001" summary="initial_commit">
       <option name="closed" value="true" />
