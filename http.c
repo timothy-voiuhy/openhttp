@@ -45,8 +45,8 @@ char *MatchReturnNetloc(char *url){
         }else{
             if(regexec(&compiled_expression, url,1, match, 0)==0){
                 // extract netloc
-                char matched_netloc[100];
-                snprintf(matched_netloc, sizeof(matched_netloc),"%.*s",match[0].rm_eo-match[0].rm_so,url+match[0].rm_eo);
+                char *matched_netloc[100];
+                snprintf(matched_netloc, sizeof(matched_netloc)*100,"%.*s",match[0].rm_eo-match[0].rm_so,url+match[0].rm_eo);
                 return &matched_netloc;
                 }else{
                     return (char *)EXIT_FAILURE;
@@ -57,20 +57,33 @@ char *MatchReturnNetloc(char *url){
 
 URL DecompileUrl(char *url){
     URL decompiled_url;
+    int parameters_present;
     if (IsValidUrl(url) != EXIT_SUCCESS){
         fprintf(stderr, "Cannot decompile url. Provided string Is not valid url");
     }
+    // set scheme
     if (MatchHttps(url) != EXIT_SUCCESS){
         decompiled_url.scheme = SCHEME_HTTPS;
     }else{
         decompiled_url.scheme = SCHEME_HTTP;
         }
+    // set netloc    
     char *netloc = MatchReturnNetloc(url);
     if(netloc != (char *)1){
         decompiled_url.netloc = netloc;
-    }    
-} 
+    // check parameteres
+    }if(in_String(url, "\?")==0){
+        parameters_present = 0;
+    }
+    // set path
+    if(parameters_present == 0){
 
+    }
+    else if(parameters_present ==1){
+
+    }
+    
+} 
 
 /*get the default http headers 
 don't forget to free the headers pointer*/
@@ -116,6 +129,17 @@ char *http_MakeHttpPacket(URL url, char *method){
     return packet;
 }
 
+Response http_ProcessResponse(char *response){
+    Response res;
+    res.resp_len = strlen(response);
+    res.content = response;
+    if(response != NULL){
+        res.respc = 200;
+    }
+    res.content_type = "html";
+    // the response must be proecessed by reading the headers and readiing the actuall http response code and the actual content not including the http headers and analysing each of the headers forexample cookies
+}
+
 Response http_MakeRequest(char *url,char *method){
     URL url_struct = DecompileUrl(url);
     char *data  = http_MakeHttpPacket(url_struct,"GET");
@@ -126,17 +150,6 @@ Response http_MakeRequest(char *url,char *method){
 
 Response HttpGet(char *url){
     return http_MakeRequest(url,"GET");
-}
- 
-Response http_ProcessResponse(char *response){
-    Response res;
-    res.resp_len = strlen(response);
-    res.content = response;
-    if(response != NULL){
-        res.respc = 200;
-    }
-    res.content_type = "html";
-    // the response must be proecessed by reading the headers and readiing the actuall http response code and the actual content not including the http headers and analysing each of the headers forexample cookies
 }
 
 Response HttpPost(){
