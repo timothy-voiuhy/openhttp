@@ -16,6 +16,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb67d295-1f0f-4c1b-a69e-34078a9f944d" name="Changes" comment="initial_commit">
+      <change afterPath="$PROJECT_DIR$/gtkstructure.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gui.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +73,7 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="2bmkuofamtZEjRkMrrwfkHdMHA4" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -93,7 +96,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -127,7 +130,7 @@
       <option name="presentableId" value="Default" />
       <updated>1706827870437</updated>
       <workItem from="1706827875545" duration="1921000" />
-      <workItem from="1706830105674" duration="2036000" />
+      <workItem from="1706830105674" duration="4191000" />
     </task>
     <task id="LOCAL-00001" summary="initial_commit">
       <option name="closed" value="true" />
@@ -154,8 +157,16 @@
       </map>
     </option>
   </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myShow1" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/../../.." />
+    </ignored-roots>
     <MESSAGE value="initial_commit" />
     <option name="LAST_COMMIT_MESSAGE" value="initial_commit" />
   </component>

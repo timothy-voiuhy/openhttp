@@ -82,7 +82,7 @@ int http_Accept(int sock_fd){
         perror("failed to accept connection");
         return EXIT_FAILURE;
     }else{
-        printf("%s","new connection accepted");
+        printf("%s","new connection accepted\n");
         return new_sockfd;
     }
 }
